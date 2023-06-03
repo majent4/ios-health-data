@@ -1,9 +1,8 @@
 from sys import argv as sys_argv, exit as sys_exit
-from os.path import isfile, dirname, abspath
+from os.path import isfile
 from utils import print_exit
 from sqlite_database import SQLiteDatabase
 from xml_parser import XMLParser
-from csv_reader import CSVReader
 
 def main():
     if len(sys_argv) == 3 and isfile(sys_argv[1]):
@@ -14,7 +13,19 @@ def main():
     db_exists = isfile(db_file)
     db = SQLiteDatabase(db_file)
     if not db_exists:
-        records = CSVReader(f'{dirname(abspath(__file__))}/activities.csv').dict
+        records = {
+            'HKQuantityTypeIdentifierStepCount': 'INTEGER',
+            'HKQuantityTypeIdentifierDistanceWalkingRunning': 'REAL',
+            'HKQuantityTypeIdentifierBasalEnergyBurned': 'REAL',
+            'HKQuantityTypeIdentifierActiveEnergyBurned': 'REAL',
+            'HKQuantityTypeIdentifierFlightsClimbed': 'INTEGER',
+            'HKQuantityTypeIdentifierHeadphoneAudioExposure': 'REAL',
+            'HKQuantityTypeIdentifierWalkingDoubleSupportPercentage': 'REAL',
+            'HKQuantityTypeIdentifierWalkingSpeed': 'REAL',
+            'HKQuantityTypeIdentifierWalkingStepLength': 'INTEGER',
+            'HKQuantityTypeIdentifierWalkingAsymmetryPercentage': 'REAL',
+            'HKCategoryTypeIdentifierSleepAnalysis': 'INTEGER'
+        }
         parser = XMLParser(xml_file)
         records_found = []
         for record in parser.root.iter('Record'):
