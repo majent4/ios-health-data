@@ -1,0 +1,33 @@
+{
+  "name": "ios-health-data",
+  "version": "0.1.0",
+  "description": "",
+  "scripts": {
+    "dev": "evidence dev"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.14.0"
+  },
+  "type": "module",
+  "dependencies": {
+    "@evidence-dev/evidence": "16.0.2",
+    "@evidence-dev/preprocess": "2.3.2",
+    "@evidence-dev/components": "2.3.2"
+  },
+  "overrides": {
+    "jsonwebtoken": "9.0.0",
+    "trim@<0.0.3": ">0.0.3",
+    "sqlite3": "5.1.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majent4/ios-health-data.git"
+  },
+  "author": "majent4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majent4/ios-health-data/issues"
+  },
+  "homepage": "https://github.com/majent4/ios-health-data#readme"
+}
