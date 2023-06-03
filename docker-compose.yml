@@ -5,3 +5,7 @@ services:
       context: .
       dockerfile: Dockerfile
     image: ios-health-data
+    ports:
+      - 3000:3000
+    volumes:
+      - ./evidence/pages/:/app/pages/
