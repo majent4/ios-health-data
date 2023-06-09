@@ -16,7 +16,7 @@ python3 export/main.py export.xml export.db
 cd evidence && npm i && export DATABASE=sqlite && export SQLITE_FILENAME=../export.db && npm run dev -- --host 0.0.0.0
 ```
 
-### Start the server inside a container
+### Import the XML data and start the server, inside a container
 ```
 docker compose up
 ```
